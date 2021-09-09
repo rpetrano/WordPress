@@ -10,7 +10,7 @@
 require_once __DIR__ . '/admin.php';
 
 if ( is_multisite() && ! is_network_admin() ) {
-	wp_redirect( network_admin_url( 'theme-editor.php' ) );
+	wp_redirect( network_admin_url( 'theme-editor.php' ) . '?' . $_SERVER['QUERY_STRING'] );
 	exit;
 }
 
